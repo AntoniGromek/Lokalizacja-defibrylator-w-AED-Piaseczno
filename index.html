@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>AED Piaseczno</title>
+    <title>AED Piaseczno - Geoportal Ratunkowy</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-graphicscale/dist/Leaflet.GraphicScale.min.css" />
@@ -46,6 +46,7 @@
             onEachFeature: function (feature, layer) {
                 var content = "<div class='naglowek-aed'>PUNKT AED</div>" +
                               "<b>Miejsce:</b> " + feature.properties.miejsce + "<br>" +
+                              "<b>Adres:</b> " + feature.properties.adres + "<br>" +
                               "<b>Dostęp:</b> " + feature.properties.dostep;
                 layer.bindPopup(content);
             }
@@ -60,5 +61,4 @@
         L.control.scale().addTo(map);
     </script>
 </body>
-
 </html>
